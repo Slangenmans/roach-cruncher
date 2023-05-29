@@ -27,4 +27,12 @@ class Bug extends Model
         */
         'isOpen' => true,
     ];
+
+    /**
+     * Get the project that owns the bug.
+     */
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Bug::class);
+    }
 }
