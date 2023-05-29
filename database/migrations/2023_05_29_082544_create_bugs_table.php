@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bugs', function (Blueprint $table) {
             $table->id();
-            $table->string('titel');
+            $table->string('title');
             $table->string('description');
             $table->boolean('isOpen');
             $table->timestamps();
