@@ -1,4 +1,21 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+    <body>
     <h1>Projects</h1>
+{{--    TODO: Echo data from projects table--}}
+    <table>
+        <tr>
+            @foreach($table_headers as $table_header)
+            <th>{{ $table_header }}</th>
+            @endforeach
+        </tr>
+            @foreach($table_data as $row)
+            <tr>
+                @foreach($row as $data_field)
+                    <td>{{ $data_field }}</td>
+                @endforeach
+            </tr>
+        @endforeach
+    </table>
+
+    </body>
 </html>
