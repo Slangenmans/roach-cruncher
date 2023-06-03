@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// TODO: Pass data from projects table
-Route::get('/projects', function () {
-    return view('projects.projects')
-        ->with('table_headers', ['th1    ', 'th2    ', 'th3    ', ])
-        ->with('table_data', [['td1.1    ', 'th2.1    ', 'th3.1    '],['td1.2    ', 'th2.2    ', 'th3.3    '], ]);
-});
+Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects/{id}', [ProjectController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
