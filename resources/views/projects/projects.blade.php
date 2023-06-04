@@ -2,20 +2,15 @@
 <body>
 <h1>Projects</h1>
 {{-- TODO: Implement Livewire functionality quickly create projects --}}
-{{-- TODO: Echo data from projects table--}}
+{{-- TODO: Create table row with collumn names --}}
 <table>
-    <tr>
-        @foreach($table_headers as $table_header)
-        <th>{{ $table_header }}</th>
-        @endforeach
-    </tr>
-        @foreach($table_data as $row)
+        @foreach($projects as $project)
         <tr>
-            @foreach($row as $data_field)
-                <td>{{ $data_field }}</td>
+            @foreach($project as $property)
+            <th>{{ $property }}</th>
             @endforeach
-        </tr>
-    @endforeach
+    	</tr>
+        @endforeach
 </table>
 </body>
 </html>
