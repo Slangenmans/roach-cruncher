@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->foreignId('bug_id')->constrained();
+            $table->foreignId('bug_id')->constrained(); // TODO: What to do with this?
             $table->timestamps();
         });
     }
