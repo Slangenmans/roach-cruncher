@@ -19,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', [ProjectController::class, 'index']);
-Route::get('/projects/{id}', [ProjectController::class, 'show']);
+Route::get('/projects', [ProjectController::class, 'index'])
+    ->name('projects');;
+Route::get('/projects/{id}', [ProjectController::class, 'show'])
+    ->name('project');;
 
 Route::get('/dashboard', function () {
     return view('dashboard');

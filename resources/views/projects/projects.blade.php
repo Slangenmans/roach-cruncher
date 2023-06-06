@@ -4,8 +4,7 @@
 </head>
 <body>
 <h1>Projects</h1>
-{{-- TODO: Implement Livewire functionality quickly create projects --}}
-{{-- TODO: Link to project page --}}
+{{-- TODO: Implement Livewire form to quickly create projects --}}
 <table>
     <tr>
         <th>Project ID</th>
@@ -20,6 +19,7 @@
         @foreach($project as $property)
         <td>{{ $property }}</td>
         @endforeach
+            <td >    @livewire('edit-button') </td>
     </tr>
     @endforeach
 </table>
