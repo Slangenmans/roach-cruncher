@@ -1,4 +1,7 @@
 <html>
+<head>
+    @livewireStyles
+</head>
 <body>
 <h1>Projects</h1>
 {{-- TODO: Implement Livewire functionality quickly create projects --}}
@@ -20,5 +23,6 @@
     </tr>
     @endforeach
 </table>
+@livewireScripts
 </body>
 </html>
