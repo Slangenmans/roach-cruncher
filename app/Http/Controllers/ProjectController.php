@@ -6,14 +6,15 @@ use Illuminate\View\View;
 
 use Illuminate\Http\Request;
 
-// TODO: Pass query-data from projects table
 class ProjectController extends Controller
 {
     public function index ()
     {
         $projects = DB::table('projects')->get();
-        
-        return view('projects.projects', ['projects' => $projects]);
+
+        return view('projects.projects', [
+            'projects' => $projects,
+            ]);
     }
 
     public function show (string $id)
