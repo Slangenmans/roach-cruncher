@@ -23,9 +23,9 @@ class Project extends Model
     /**
      * Get the bugs for the project.
      */
-    public function bugs(): HasMany
-    {
-        return $this->hasMany(Bug::class);
-    }
+    // public function bugs(): HasMany
+    // {
+    //     return $this->hasMany(Bug::class);
+    // }
 
 }

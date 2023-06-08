@@ -17,12 +17,12 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
-        $bug_id = DB::table('bugs')->pluck('id');
+        // $bug_id = DB::table('bugs')->pluck('id');
 
         return [
             'title' => fake()->words(3, true),
             'description' => fake()->sentence(10),
-            'bug_id' => fake()->randomElement($bug_id),
+            // 'bug_id' => fake()->randomElement($bug_id),
         ];
     }
 }

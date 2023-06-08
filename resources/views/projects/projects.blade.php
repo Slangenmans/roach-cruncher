@@ -17,8 +17,8 @@
 </head>
 <body>
 <h1>Projects</h1>
-{{-- TODO: Implement Livewire form to quickly create projects --}}
 {{-- TODO: Unset isOpen, Created at and updated at collumns --}}
+@livewire('add-project-form')
 <table>
     <tr>
         <th>Project ID</th>
