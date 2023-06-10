@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -15,6 +16,17 @@ class ProjectController extends Controller
         return view('projects.projects', [
             'projects' => $projects,
             ]);
+    }
+
+    public function store (Request $request)
+    {
+ 
+        $project = Project::create([
+            'title' => $request->input('input_title'),
+            'description' => $request->input('input_description'),
+        ]);
+
+        return redirect()->route('projects');
     }
 
     public function show (string $id)

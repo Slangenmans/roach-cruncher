@@ -20,9 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('/projects', [ProjectController::class, 'index'])
-    ->name('projects');;
+    ->name('projects');
 Route::get('/projects/{id}', [ProjectController::class, 'show'])
-    ->name('project');;
+    ->name('project');
+Route::post('/projects', [ProjectController::class, 'store']); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

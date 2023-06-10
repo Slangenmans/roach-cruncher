@@ -12,19 +12,22 @@
 </body>
 </html>
 <head>
-    @livewireStyles
 {{--    <title></title>--}}
 </head>
 <body>
 <h1>Projects</h1>
+<form method="POST" action="/projects">
+    @csrf
+    <input type="text" name="input_title" id="input_title">
+    <input type="text" name="input_description" id="input_description">
+    <button type="submit">Create</button>
+</form>
 {{-- TODO: Unset isOpen, Created at and updated at collumns --}}
-@livewire('add-project-form')
 <table>
     <tr>
         <th>Project ID</th>
         <th>Title</th>
         <th>Description</th>
-        <th>isOpen</th>
         <th>Created at</th>
         <th>Updated at</th>
     </tr>
@@ -40,6 +43,5 @@
         </tr>
     @endforeach
 </table>
-@livewireScripts
 </body>
 </html>
