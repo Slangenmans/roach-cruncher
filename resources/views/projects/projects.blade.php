@@ -18,8 +18,18 @@
 <h1>Projects</h1>
 <form method="POST" action="/projects">
     @csrf
-    <input type="text" name="input_title" id="input_title">
-    <input type="text" name="input_description" id="input_description">
+    <input type="text" name="input_title" id="input_title" class="@error('input_title') required @enderror">
+    
+    @error('input_title')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+    
+    <input type="text" name="input_description" id="input_description" class="@error('input_description') required @enderror">
+
+    @error('input_description')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <button type="submit">Create</button>
 </form>
 {{-- TODO: Unset isOpen, Created at and updated at collumns --}}
