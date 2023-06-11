@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/projects', [ProjectController::class, 'index'])
+    ->name('projects');
+Route::get('/projects/{id}', [ProjectController::class, 'show'])
+    ->name('project');
+Route::post('/projects', [ProjectController::class, 'store']); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
