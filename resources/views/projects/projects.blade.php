@@ -16,14 +16,17 @@
 </head>
 <body>
 <h1>Projects</h1>
+<h3>Create a new project:</h3>
 <form method="POST" action="/projects">
     @csrf
+    <label for="input_title">Title</label>
     <input type="text" name="input_title" id="input_title" class="@error('input_title') required @enderror">
     
     @error('input_title')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
     
+    <label for="input_description">Description</label>
     <input type="text" name="input_description" id="input_description" class="@error('input_description') required @enderror">
 
     @error('input_description')
