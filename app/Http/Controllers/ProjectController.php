@@ -21,8 +21,13 @@ class ProjectController extends Controller
     public function store (Request $request)
     {
         $validated = $request->validate([
-            'input_title' => 'required|min:6',
-            'input_description' => 'required|max:40',
+            'input_title' => 'required|min:6|max:69',
+            'input_description' => 'max:120',
+        ],
+        [
+            'input_title.required' => 'A title is required',
+            'input_title.min' => 'Minimum of :min characters',
+            'input_description.max' => 'Limit of :max characters exceeded',
         ]);
         
         $project = Project::create([
@@ -36,9 +41,5 @@ class ProjectController extends Controller
     public function show (string $id)
     {
         return 'individual project ' . $id;
-
-        // ->with('table_headers', ['th1    ', 'th2    ', 'th3    ', ])
-        // ->with('table_data', [['td1.1    ', 'th2.1    ', 'th3.1    '],['td1.2    ', 'th2.2    ', 'th3.3    '], ])
-        //     ->with($id);
     }
 }
