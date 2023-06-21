@@ -40,6 +40,6 @@ class ProjectController extends Controller
 
     public function show (string $id)
     {
-        return 'individual project ' . $id;
+        return view('projects.project', [$id]);
     }
 }
