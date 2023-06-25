@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Bug extends Model
 {
@@ -20,19 +21,14 @@ class Bug extends Model
     ];
 
     protected $attributes = [
-        /*
-        TODO create default attributes:
-           +dateCreated (date)
-           +isOpen (bool)
-        */
         'isOpen' => true,
     ];
 
     /**
      * Get the project that owns the bug.
      */
-    public function post(): BelongsTo
+    public function project(): BelongsTo
     {
-        return $this->belongsTo(Bug::class);
+        return $this->BelongsTo(Bug::class);
     }
 }

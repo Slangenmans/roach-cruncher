@@ -14,6 +14,7 @@ class BugSeeder extends Seeder
      */
     public function run(): void
     {
-        Bug::factory(25)->create();
+        Bug::factory(25)
+        ->create();
     }
 }
